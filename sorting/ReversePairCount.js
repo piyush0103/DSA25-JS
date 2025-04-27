@@ -1,5 +1,3 @@
-
-
 const merge = (arr, low, high) => {
 	let res = 0;
 	if (low < high) {
@@ -24,19 +22,26 @@ const sort = (arr, low, mid, high) => {
 		k = low;
 
 	while (i < n1 && j < n2) {
+		if (left[i] > 2 * right[j]) {
+			res += n1 - i;
+			j++;
+		} else {
+			i++;
+		}
+	}
+	i = 0;
+	j = 0;
+	while (i < n1 && j < n2) {
 		if (left[i] <= right[j]) {
 			arr[k] = left[i];
 			i++;
 		} else {
-			if (left[i] > 2 * right[j]) {
-				res += n1 - i;
-			}
 			arr[k] = right[j];
 			j++;
 		}
-
 		k++;
 	}
+
 	while (i < n1) {
 		arr[k] = left[i];
 		k++;
@@ -50,5 +55,6 @@ const sort = (arr, low, mid, high) => {
 	console.log(res + ' xxxxxxx');
 	return res;
 };
-const arr = [1, 3, 2, 3, 1];
-console.log(merge(arr, 0, arr.length - 1),'final count');
+const arr = [5, 1, 3, 2, 3, 1];
+console.log(merge(arr, 0, arr.length - 1), 'final count');
+console.log(arr);
