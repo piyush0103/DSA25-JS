@@ -1,13 +1,13 @@
 const sortByParuty = (arr) => {
 
 	while (i < arr.length) {
-		if (arr[i] % 2 != 0 && arr[j] % 2 == 0) {
-			swap(arr, i, j);
-		} else if (arr[i] % 2 == 0) {
-			i++;
-		} else if (arr[j] % 2 != 0) {
-			j--;
-		}
+	if(arr[i]%2==0){
+        arr.unshift(arr[i])
+    }
+    else{
+        
+    }
+
 	}
 };
 const swap = (arr, i, j) => {

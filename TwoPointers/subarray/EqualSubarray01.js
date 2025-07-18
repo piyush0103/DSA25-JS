@@ -1,4 +1,4 @@
-//  carry forword prefix summ two pointeer
+//  carry forword prefix summ two pointeer  
 
 const findSubArray = (arr) => {
 	let len = arr.length;
