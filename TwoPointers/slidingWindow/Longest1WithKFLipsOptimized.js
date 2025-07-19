@@ -5,15 +5,19 @@ const findLongestOneWithKflips = (arr, k) => {
 	let max_len = 0;
 	let left = 0;
 	let zero_count = 0;
-	for (let i = 0; i < arr.length; i++) {
-		if (arr[i] == 0) {
+	for (let right = 0; right < arr.length; right++) {
+		if (arr[right] == 0) {
 			zero_count++;
 		}
 		while (zero_count > k) {
-			zero_count--;
+			if(arr[left]==0){
+				zero_count--;
+			}
+
 			left++;
 		}
-        max_len=Math.max(max_len,(i-left+1))
+        max_len=Math.max(max_len,(right-left+1))
 	}
+	return max_len;
 };
 console.log(findLongestOneWithKflips(arr, k));
